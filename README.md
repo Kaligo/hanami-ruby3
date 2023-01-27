@@ -10,8 +10,13 @@ This should only be installed for a short time, during the Hanami Upgrade proces
 It just overrides a few of the Hanami classes, replacing code raising deprecation
 warnings with updated code supported Ruby 3.0 syntax.
 
+## Warning!!!
 
-### Usage
+This code just overrides the Hanami components, does not introduce tests of any sort.
+Before you upgrade your Ruby version, make sure, that your code is covered with tests,
+and your deprecations tracked.
+
+## Usage
 
 In your project, install overrides for the given classes
 
