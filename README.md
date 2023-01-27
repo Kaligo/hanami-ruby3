@@ -21,8 +21,9 @@ and your deprecations tracked.
 In your project, install overrides for the given classes
 
 ```ruby
+# custom-hanami-utils is required to allow installing Hanami 1.3.5 with ruby 3
 gem 'hanami-utils', github: 'swilgosz/hanami-utils', branch: '1.3.x-support-ruby-3.0'
-gem 'hanami-ruby3', path: '../hanami-ruby3'
+gem 'hanami-ruby3'
 ```
 
 Then load overrides in the `environment.rb`, after loading Hanami files.
