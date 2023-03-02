@@ -25,6 +25,12 @@ In your project, install overrides for the given classes
 ```ruby
 # custom-hanami-utils is required to allow installing Hanami 1.3.5 with ruby 3
 gem 'hanami-utils', github: 'swilgosz/hanami-utils', branch: '1.3.x-support-ruby-3.0'
+
+# Deprecated DRY libraries are renamed to RDY - we install those so we can update our DRY libraries freely.
+%w[core container configurable equalizer monads logic types struct validation].each do |name|
+  gem "rdy-#{name}", ascenda_private: "Kaligo/rdy", glob: "lib/rdy/#{name}/rdy-#{name}.gemspec"
+end
+
 gem 'hanami-ruby3'
 ```
 
