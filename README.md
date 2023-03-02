@@ -1,6 +1,8 @@
 # Hanami Ruby 3.0
 
-Monkey patches Hanami components to support Ruby 3.0
+Monkey patches Hanami components to support Ruby 3.0. This includes
+1. Copying Hanami 1.3.X files to support Ruby 3 syntax.
+2. Copying Hanami 1.3.X files and getting rid of deprecated DRY libraries to allow upgrade of those gems.
 
 ## Overview
 
