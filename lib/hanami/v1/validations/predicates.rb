@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "dry/logic/predicates"
+require "rdy/logic/predicates"
 require "hanami/utils/class_attribute"
 
 module Hanami
@@ -35,7 +35,7 @@ module Hanami
       # @api private
       def self.included(base)
         base.class_eval do
-          include Dry::Logic::Predicates
+          include Rdy::Logic::Predicates
           include Hanami::Utils::ClassAttribute
 
           class_attribute :messages

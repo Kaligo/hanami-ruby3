@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require "dry-validation"
+require "rdy-validation"
 require "hanami/utils/class_attribute"
 require_relative "./validations/namespace"
 require_relative "./validations/predicates"
 require_relative "./validations/inline_predicate"
 require "set"
 
-Dry::Validation::Messages::Namespaced.configure do |config|
+Rdy::Validation::Messages::Namespaced.configure do |config|
   # rubocop:disable Lint/NestedPercentLiteral
   #
   # This is probably a false positive.
@@ -265,7 +265,7 @@ module Hanami
         # @api private
         def _build(options = {}, &blk)
           options = {build: false}.merge(options)
-          Dry::Validation.__send__(_schema_type, options, &blk)
+          Rdy::Validation.__send__(_schema_type, options, &blk)
         end
 
         # @since 0.6.0
@@ -289,7 +289,7 @@ module Hanami
             config.messages_file = _messages_path unless _messages_path.nil?
             config.namespace     = namespace
 
-            require "dry/validation/messages/i18n" if config.messages == :i18n
+            require "rdy/validation/messages/i18n" if config.messages == :i18n
           end
         end
 
@@ -302,7 +302,7 @@ module Hanami
             config.messages      = _predicates_module&.messages || @_messages || DEFAULT_MESSAGES_ENGINE
             config.messages_file = _predicates_module.messages_path unless _predicates_module.nil?
 
-            require "dry/validation/messages/i18n" if config.messages == :i18n
+            require "rdy/validation/messages/i18n" if config.messages == :i18n
           end
         end
 
@@ -367,7 +367,7 @@ module Hanami
 
       # Validates the object.
       #
-      # @return [Dry::Validations::Result]
+      # @return [Rdy::Validations::Result]
       #
       # @since 0.2.4
       def validate
